@@ -7,7 +7,7 @@ export class MySqlAppointmentRepository implements IAppointmentRepository {
     await prisma.appointmentPE.create({
       data: {
         insured_id: appointment.insuredId,
-        schedule_id: appointment.scheduled,
+        schedule_id: appointment.scheduleId,
         center_id: appointment.scheduleData.centerId,
         specialty_id: appointment.scheduleData.specialtyId,
         medic_id: appointment.scheduleData.medicId,
