@@ -1,0 +1,25 @@
+{
+  "name": "appointment_pe",
+  "version": "1.0.0",
+  "description": "��#\u0000 \u0000T\u0000y\u0000p\u0000e\u0000s\u0000c\u0000r\u0000i\u0000p\u0000t\u0000-\u0000L\u0000a\u0000m\u0000b\u0000d\u0000a\u0000\r\u0000 \u0000# rds_node.ts_lambda",
+  "main": "index.js",
+  "scripts": {
+    "build": "tsc",
+    "start": "node dist/index.js",
+    "dev": "ts-node src/index.ts",
+    "test": "jest",
+    "lambda": "tsc && node dist/index.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@prisma/client": "^6.11.1"
+  },
+  "devDependencies": {
+    "aws-sdk": "^2.1692.0",
+    "ts-node": "^10.9.2",
+    "@types/aws-lambda": "^8.10.131",
+    "typescript": "^5.3.3"
+  }
+}
