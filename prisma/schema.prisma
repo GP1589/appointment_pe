@@ -16,9 +16,8 @@ model AppointmentPE {
   specialty_id     Int
   medic_id         Int
   appointment_date DateTime @db.Timestamp
-  status           String   @db.VarChar(20)
-  country_iso      String   @db.VarChar(2)
   created_at       DateTime @default(now()) @db.Timestamp
 
   @@map("appointments_pe")
 }
+

@@ -12,8 +12,6 @@ export class MySqlAppointmentRepository implements IAppointmentRepository {
         specialty_id: appointment.scheduleData.specialtyId,
         medic_id: appointment.scheduleData.medicId,
         appointment_date: new Date(appointment.scheduleData.date),
-        status: appointment.status,
-        country_iso: appointment.countryISO,
       },
     });
   }
