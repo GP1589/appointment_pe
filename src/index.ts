@@ -9,7 +9,7 @@ const processor = new AppointmentProcessorService(repository);
 
 export const handler = async (event: SQSEvent): Promise<void> => {
   const logger: ILogger = LoggerFactory.createLogger({
-    lambdaFunction: "processAppointments",
+    lambdaFunction: "AppointmentPeFunction",
   });
 
   try {
