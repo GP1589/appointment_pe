@@ -26,13 +26,19 @@ export class AppointmentProcessorService {
       await this.repository.save(appointment);
       console.log("Cita guardada exitosamente");
 
+      // Preparar el detalle del evento con status "completed" para que coincida con la regla
+      const eventDetail = {
+        ...appointment,
+        status: "completed", // Asegurando que coincida con el event pattern
+      };
+
       // Configurar evento para EventBridge
       const eventParams = {
         Entries: [
           {
             Source: "appointment.system",
             DetailType: "Appointment Processed",
-            Detail: JSON.stringify(appointment),
+            Detail: JSON.stringify(eventDetail), // Usamos el detalle modificado
             EventBusName: process.env.EVENT_BUS_NAME || "default",
           },
         ],
@@ -61,7 +67,6 @@ export class AppointmentProcessorService {
         timestamp: new Date().toISOString(),
       });
 
-      // Relanza el error para que pueda ser manejado por el llamador
       throw error;
     }
   }
